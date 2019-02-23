@@ -1,3 +1,14 @@
+# Cycles through all .jpg images in current directory
+# Shows the user each image and asks for classification
+# Saves listing of file names and classifications in
+#   'labels.csv' file
+
+# Based heavily on this example:
+# https://stackoverflow.com/questions/14771380/
+# how-do-i-make-the-program-wait-for-an-input-using-an-
+# entry-box-in-python-gui
+
+
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from PIL import Image, ImageTk
