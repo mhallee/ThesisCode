@@ -1,0 +1,40 @@
+x_train shape: (642, 100, 100, 3)
+642 train samples
+Not using data augmentation.
+Train on 642 samples, validate on 213 samples
+Epoch 1/100
+642/642 [==============================] - 921s 1s/step - loss: 0.7134 - acc: 0.5093 - val_loss: 0.6866 - val_acc: 0.6338
+Epoch 2/100
+642/642 [==============================] - 986s 2s/step - loss: 0.6910 - acc: 0.5358 - val_loss: 0.7537 - val_acc: 0.5869
+Epoch 3/100
+642/642 [==============================] - 966s 2s/step - loss: 0.7033 - acc: 0.5343 - val_loss: 0.6768 - val_acc: 0.5869
+Epoch 4/100
+642/642 [==============================] - 944s 1s/step - loss: 0.6847 - acc: 0.5810 - val_loss: 0.6800 - val_acc: 0.5962
+Epoch 5/100
+642/642 [==============================] - 970s 2s/step - loss: 0.6892 - acc: 0.5514 - val_loss: 0.9307 - val_acc: 0.4131
+Epoch 6/100
+642/642 [==============================] - 967s 2s/step - loss: 0.6901 - acc: 0.5717 - val_loss: 0.6773 - val_acc: 0.5869
+Epoch 7/100
+642/642 [==============================] - 957s 1s/step - loss: 0.6863 - acc: 0.5826 - val_loss: 0.6690 - val_acc: 0.6432
+Epoch 8/100
+642/642 [==============================] - 954s 1s/step - loss: 0.6822 - acc: 0.6044 - val_loss: 0.6893 - val_acc: 0.6009
+Epoch 9/100
+642/642 [==============================] - 4609s 7s/step - loss: 0.6756 - acc: 0.5826 - val_loss: 0.6887 - val_acc: 0.6009
+Epoch 10/100
+642/642 [==============================] - 1013s 2s/step - loss: 0.6835 - acc: 0.5888 - val_loss: 0.7004 - val_acc: 0.4554
+Epoch 11/100
+642/642 [==============================] - 4622s 7s/step - loss: 0.6775 - acc: 0.5685 - val_loss: 0.6815 - val_acc: 0.5728
+Epoch 12/100
+642/642 [==============================] - 989s 2s/step - loss: 0.6733 - acc: 0.6215 - val_loss: 0.6723 - val_acc: 0.6385
+Epoch 13/100
+642/642 [==============================] - 983s 2s/step - loss: 0.6765 - acc: 0.6075 - val_loss: 0.7043 - val_acc: 0.5211
+Epoch 14/100
+320/642 [=============>................] - ETA: 7:15 - loss: 0.6444 - acc: 0.6469
+---------------------------------------------------------------------------
+KeyboardInterrupt                         Traceback (most recent call last)
+<ipython-input-12-ff379a6deb0d> in <module>()
+     55               validation_data=(x_test, y_test),
+     56               shuffle=True,
+---> 57               callbacks=[tensorboard])
+     58 else:
+     59     print('Using real-time data augmentation.')

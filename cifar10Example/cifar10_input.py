@@ -149,9 +149,10 @@ def distorted_inputs(data_dir, batch_size):
 # Function copied from https://www.tensorflow.org/guide/datasets
 def _parse_function(filename, label):
   print("I'm PARSING")
+  print(filename)
   image_string = tf.read_file(filename)
   image_decoded = tf.image.decode_jpeg(image_string)
-  
+  tf.summary.image
   #if re-implimenting, change the return variable, as well
   #image_resized = tf.image.resize_images(image_decoded, [28, 28])
   
@@ -187,20 +188,16 @@ def inputs(eval_data, data_dir, batch_size):
   with tf.name_scope('input'):
     #create dataset
     dataset = tf.data.Dataset.from_tensor_slices((filenames, labels))
-    print(dataset.output_shapes)
     #read images
     dataset = dataset.map(_parse_function)
-    print(dataset.output_shapes)
 
     print("mapped!!!")
     # Subtract off the mean and divide by the variance of the pixels.
     #float_image = tf.image.per_image_standardization(resized_image)
+    #float_image.set_shape([height, width, 3])
 
     # Set the shapes of tensors.
-    float_image.set_shape([height, width, 3])
-    read_input.label.set_shape([1])
+    #labels.set_shape([1])
 
   # Generate a batch of images and labels by building up a queue of examples.
-  return _generate_image_and_label_batch(float_image, read_input.label,
-                                         batch_size,
-                                         shuffle=False)
+  return dataset.batch(batch_size), labels

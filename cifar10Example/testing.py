@@ -14,3 +14,11 @@ with tf.device('/cpu:0'):
       print("Control returned to test")
       print (type(images))
       print (type(labels))
+      with tf.Session() as sess:
+      	it = images.make_one_shot_iterator().get_next()
+      	print(sess.run(it))
+      	tf.summary.image('input', it[0], 3)
+      	merged = tf.summary.merge_all()
+      	writer = tf.summary.FileWriter('\\tb', sess.graph)
+      	writer.add_summary(merged)
+
